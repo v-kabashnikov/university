@@ -21,8 +21,8 @@ struct FilterUniversity {
     2: string cityID
     3: base.University_Type type
     4: string name
-
 }
+
 service UniversitiesService {
 	set<base.University> customSearchUniversity(1: FilterUniversity filter)
 	set<base.University> findNearBy(1: i64 longtitude, 2: i64 latitude)
@@ -32,7 +32,15 @@ service UniversitiesService {
 	base.University edit(1: University edit)
 }
 
+struct FilterFaculty {
+    1: string countryID
+    2: string cityID
+    3: base.Faculty_Type type
+    4: string name
+}
+
 service FacultiesService {
+	set<base.Faculty> customSearchFaculty(1: FilterFaculty filter)
 	set<base.Faculty> showFacultiesFromUniversity(1: string key)
 	base.Faculty find(1: string key)
 	void delete(1: string key)
