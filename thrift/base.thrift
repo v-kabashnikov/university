@@ -11,7 +11,7 @@ enum University_Type{
 
 
 struct University {
-	0: string key
+	0: string id
 	1: string name
 	2: string short_name
 	3: string country
@@ -28,7 +28,7 @@ enum Faculty_Type{
 }
 
 struct Faculty {
-	0: string key
+	0: string id
 	1: string name
 	2: string short_name
 	3: string country
@@ -39,7 +39,7 @@ struct Faculty {
 }
 
 struct Lecturer {
-	0: string key
+	0: string id
 	1: string name
 	2: string degree
 	3: string faculty
