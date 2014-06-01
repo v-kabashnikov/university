@@ -29,7 +29,7 @@ service UniversitiesService {
 	base.University edit(1: University edit)
 }
 
-service FacultiesServie {
+service FacultiesService {
 	set<base.Faculty> showFacultiesFromUniversity(1: string key)
 	base.Faculty find(1: string key)
 	void delete(1: string key)
