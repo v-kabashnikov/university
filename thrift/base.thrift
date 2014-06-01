@@ -38,9 +38,17 @@ struct Faculty {
 	7: set<string> specialities
 }
 
+enum LecturerDegree{
+	FIRST
+	SECOND
+	THIRD
+	FOURTH
+}
+
+
 struct Lecturer {
 	0: string id
 	1: string name
-	2: string degree
+	2: LecturerDegree degree
 	3: string faculty
 	4: set<string> interests
