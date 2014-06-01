@@ -2,7 +2,7 @@ namespace java mmf.universities
 
 
 
-enum University_Type{
+enum UniversityType{
 	MATHEMATICAL
 	PHILOLOGICAL
 	PHILOSIPHICAL
@@ -13,14 +13,14 @@ enum University_Type{
 struct University {
 	0: string id
 	1: string name
-	2: string short_name
+	2: string shortName
 	3: string country
 	4: string city
 	5: string address
-	6: University_Type type
+	6: UniversityType type
 }
 
-enum Faculty_Type{
+enum FacultyType{
 	MATHEMATICAL
 	PHILOLOGICAL
 	PHILOSIPHICAL
@@ -30,11 +30,11 @@ enum Faculty_Type{
 struct Faculty {
 	0: string id
 	1: string name
-	2: string short_name
+	2: string shortName
 	3: string country
 	4: string city
 	5: string address
-	6: Faculty_Type type
+	6: FacultyType type
 	7: set<string> specialities
 }
 
