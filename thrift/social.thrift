@@ -17,8 +17,8 @@ service GlobalSearch {
 }
 
 struct FilterUniversity {
-    1: i16 countryID
-    2: i16 cityID
+    1: string countryID
+    2: string cityID
     3: base.University_Type type
     4: string name
 
