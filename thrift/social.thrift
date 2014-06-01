@@ -19,7 +19,7 @@ service GlobalSearch {
 struct FilterUniversity {
     1: string countryID
     2: string cityID
-    3: base.University_Type type
+    3: base.UniversityType type
     4: string name
 }
 
@@ -35,7 +35,7 @@ service UniversitiesService {
 struct FilterFaculty {
     1: string countryID
     2: string cityID
-    3: base.Faculty_Type type
+    3: base.FacultyType type
     4: string name
 }
 
@@ -50,12 +50,13 @@ service FacultiesService {
 
 struct FilterLecturer {
 	1: string degree
-	2: string country
-	3: string city
+	2: string countryID
+	3: string cityID
 	4: set<string> interests
 	5: string name
 }
 service LecturesService {
+	set<base.Lecturer> customSearchLecturer(1: FilterLecturer filter)
 	set<base.Lecturer> showFromUniversity(1: string key)
 	set<base.Lecturer> showFromFaculty(1: string key)
 	set<base.Lecturer> find(1: list<string> tags)
