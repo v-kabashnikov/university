@@ -4,23 +4,26 @@ namespace java mmf.universities
 include "base.thrift"
 
 
-service GlobalSearch {
+struct GlobalSearchResult {
+    1: set<base.University> universities
+    2: set<base.Faculty> faculties
+    3: set<base.Lecturer> lecturers
+}
 
-	set<base.SearchItem> instantSearchUniversity(1: string name )
-	set<base.Lecturer> searchUniversity(1: string name, 2: i16 page )
-	set<base.Faculty> searchFaculty(1: string name, 2: i16 page )
-	set<base.Lecturer> searchLecturer(1: string name, 2: i16 page )	
+
+service GlobalSearch {
+	set<base.SearchItem> autocomplete(1: string queryString)
+	GlobalSearchResult search(1: string queryString)
 }
 
 struct FilterUniversity {
-    1: string country
-    2: string city
-    3: string type
+    1: i16 countryID
+    2: i16 cityID
+    3: base.University_Type type
     4: string name
 
 }
 service UniversitiesService {
-	set<base.University> rankedPage (1: i16 page)
 	set<base.University> customSearchUniversity(1: FilterUniversity filter)
 	set<base.University> findNearBy(1: i64 longtitude, 2: i64 latitude)
 	base.University find(1: string key)
