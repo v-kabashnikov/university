@@ -49,7 +49,7 @@ service FacultiesService {
 }
 
 struct FilterLecturer {
-	1: string degree
+	1: LecturerDegree degree
 	2: string countryID
 	3: string cityID
 	4: set<string> interests
